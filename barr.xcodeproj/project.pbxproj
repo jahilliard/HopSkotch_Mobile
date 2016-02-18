@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0074291C725D91008E9652 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0074281C725D91008E9652 /* LoginViewController.swift */; };
 		0C0ECBD71C6C3EAA00252B51 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0ECBD61C6C3EAA00252B51 /* YelpClient.swift */; };
 		0C0ECBD91C6C587700252B51 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0ECBD81C6C587700252B51 /* Location.swift */; };
 		0C2B2C4A1C6EA3D800D4562B /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2B2C491C6EA3D800D4562B /* GoogleClient.swift */; };
@@ -25,6 +26,7 @@
 		0C3EA74C1C713BE60039193B /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3EA74B1C713BE60039193B /* Chat.storyboard */; };
 		0C3EA74E1C713CDC0039193B /* CurrentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3EA74D1C713CDC0039193B /* CurrentChatViewController.swift */; };
 		0C44DD2C1C6FE70D00B88039 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44DD2B1C6FE70D00B88039 /* AccountViewController.swift */; };
+		0CE32B4D1C759E3000C61F98 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE32B4C1C759E3000C61F98 /* Alamofire.swift */; };
 		F5EA423E335AEFD9191DA847 /* Pods_barr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916C42F7B8F8814DA6A2EB5E /* Pods_barr.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0074281C725D91008E9652 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0C0ECBD61C6C3EAA00252B51 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		0C0ECBD81C6C587700252B51 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0C2B2C491C6EA3D800D4562B /* GoogleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		0C3EA74B1C713BE60039193B /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0C3EA74D1C713CDC0039193B /* CurrentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentChatViewController.swift; sourceTree = "<group>"; };
 		0C44DD2B1C6FE70D00B88039 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		0CE32B4C1C759E3000C61F98 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		36CDFA35C0D7F6EA94DAAE26 /* Pods-barr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-barr/Pods-barr.debug.xcconfig"; sourceTree = "<group>"; };
 		433DC74FE6359325AE41CE9E /* Pods-barr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barr.release.xcconfig"; path = "Pods/Target Support Files/Pods-barr/Pods-barr.release.xcconfig"; sourceTree = "<group>"; };
 		916C42F7B8F8814DA6A2EB5E /* Pods_barr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_barr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +92,7 @@
 		0C0ECBD51C6C3E8800252B51 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0CE32B4C1C759E3000C61F98 /* Alamofire.swift */,
 				0C0ECBD61C6C3EAA00252B51 /* YelpClient.swift */,
 				0C2B2C491C6EA3D800D4562B /* GoogleClient.swift */,
 			);
@@ -167,6 +172,7 @@
 				0C3DBAF01C6C13AA00401A2E /* MapViewController.swift */,
 				0C44DD2B1C6FE70D00B88039 /* AccountViewController.swift */,
 				0C3EA74D1C713CDC0039193B /* CurrentChatViewController.swift */,
+				0C0074281C725D91008E9652 /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -350,11 +356,13 @@
 				0C3DBAF11C6C13AA00401A2E /* MapViewController.swift in Sources */,
 				0C2B2C4A1C6EA3D800D4562B /* GoogleClient.swift in Sources */,
 				0C3DBAEF1C6C13AA00401A2E /* AppDelegate.swift in Sources */,
+				0CE32B4D1C759E3000C61F98 /* Alamofire.swift in Sources */,
 				0C0ECBD91C6C587700252B51 /* Location.swift in Sources */,
 				0C0ECBD71C6C3EAA00252B51 /* YelpClient.swift in Sources */,
 				0C3926541C6C351500CF343B /* Request.swift in Sources */,
 				0C3926501C6C28CD00CF343B /* Chat.swift in Sources */,
 				0C39264C1C6C149E00CF343B /* User.swift in Sources */,
+				0C0074291C725D91008E9652 /* LoginViewController.swift in Sources */,
 				0C44DD2C1C6FE70D00B88039 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

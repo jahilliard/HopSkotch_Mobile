@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 
+let screenSize: CGRect = UIScreen.mainScreen().bounds
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+//        if (FBSDKAccessToken.currentAccessToken() == nil){
+//            let storyboard = UIStoryboard(name: "Account", bundle: nil)
+//            
+//            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
+//            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+//        } else {
+//            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+//        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
     }
     
     func application(app: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {

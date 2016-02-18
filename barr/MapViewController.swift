@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import FBSDKCoreKit
+import Alamofire
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -62,7 +64,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         if let lat = userLocation.coordinate.latitude as Double?, long = userLocation.coordinate.longitude as Double?{
             print("Hit anyway")
+            let button = UIButton(frame: CGRectMake((screenSize.width * 0.75), (screenSize.height * 0.75), screenSize.width * 0.1, screenSize.height * 0.1))
+            button.backgroundColor = UIColor.greenColor()
             self.view = self.gMap.makeMap(lat, longitude: long)
+            self.view.addSubview(button)
         }else {
             print("lat long not defined")
         }

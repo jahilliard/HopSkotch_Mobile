@@ -6,8 +6,6 @@
 //  Copyright © 2016 barrapp. All rights reserved.
 //
 
-import UIKit
-
 import AFNetworking
 import BDBOAuth1Manager
 

@@ -6,7 +6,6 @@
 //  Copyright © 2016 barrapp. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class CurrentChatViewController: UIViewController {
