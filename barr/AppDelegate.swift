@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import SwiftyJSON
 
 let screenSize: CGRect = UIScreen.mainScreen().bounds
 
@@ -18,6 +19,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        FBSDKAccessToken.currentAccessToken
+        if let fbAuthtoken = User.prefs.stringForKey("fbAuthtoken"){
+            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["access_token":fbAuthtoken], tokenString: fbAuthtoken, version: nil, HTTPMethod: "GET")
+            req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+                if(error == nil){
+                    print("result \(result)")
+                    let currUser = User(fbAuthtoken: fbAuthtoken, fbId: User.prefs.stringForKey("fbId")!, access_token: User.prefs.stringForKey("barrAuthToken")!, userId: User.prefs.stringForKey("barrId")!)
+                } else {
+                    print("error \(error)")
+                    print("Token not valid")
+                }
+            });
+        } else {
+            let storyboard = UIStoryboard(name: "Account", bundle: nil)
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+//        print("Graph Call")
+//        let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,first_name,last_name"], tokenString: fbAuthtoken, version: nil, HTTPMethod: "GET")
+//        req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+//            if(error == nil)
+//            {
+//                print("result \(result)")
+//                let resultJSON = JSON(result)
+//                updateUserInfo( resultJSON["first_name"].rawString()!, lastName: resultJSON["last_name"].rawString()!, email: resultJSON["email"].rawString()!)
+//            }
+//            else
+//            {
+//                print("error \(error)")
+//            }
+//        })
+        
         // Override point for customization after application launch.
 //        if (FBSDKAccessToken.currentAccessToken() == nil){
 //            let storyboard = UIStoryboard(name: "Account", bundle: nil)
@@ -29,8 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        } else {
 //            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 //        }
-        
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
     }
     

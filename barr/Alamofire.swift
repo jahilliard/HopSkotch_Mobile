@@ -9,15 +9,19 @@
 import Alamofire
 import SwiftyJSON
 
-struct AlamoHelper {
-    let headers = [
-        "content-type": "application/json"
-    ]
-    
-    let domain = "http://10.0.0.2:3000/"
+let headers = [
+    "content-type": "application/json"
+]
 
-    func get(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> Void){
-        Alamofire.request(.GET, domain + subdomain, headers: headers, parameters: parameters)
+
+struct AlamoHelper {
+
+    static let domain = "http://150.212.62.71:3000/"
+//    static let domain = "http://10.0.0.2:3000/"
+//    static let domain = "http://128.237.181.151:3000/"
+
+    static func GET(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> AnyObject){
+        Alamofire.request(.GET, self.domain + subdomain, headers: headers, parameters: parameters)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -33,8 +37,8 @@ struct AlamoHelper {
         }
     }
     
-    func post(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> Void){
-        Alamofire.request(.POST, domain + subdomain, headers: headers, parameters: parameters)
+    static func POST(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> AnyObject){
+        Alamofire.request(.POST, self.domain + subdomain, headers: headers, parameters: parameters)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -50,8 +54,8 @@ struct AlamoHelper {
         }
     }
     
-    func delete(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> Void){
-        Alamofire.request(.DELETE, domain + subdomain, headers: headers, parameters: parameters)
+    static func DELETE(subdomain: String, parameters:[String: AnyObject], completion: (response: JSON) -> AnyObject){
+        Alamofire.request(.DELETE, self.domain + subdomain, headers: headers, parameters: parameters)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in

@@ -8,7 +8,6 @@
 
 import UIKit
 import FBSDKCoreKit
-import FBSDKShareKit
 import FBSDKLoginKit
 import Alamofire
 
@@ -54,12 +53,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if (error == nil){
-            Alamofire.request(.GET, "http://10.0.0.2:3000/login/facebook", headers: headers, parameters: ["access_token": result.token.tokenString])
-                .validate(contentType: ["application/json"])
-                .responseJSON { response in
-                    print("\(response)")
-            }
+            Auth.sendAuthRequest(result.token.tokenString)
+//            print(User.createUser(result.token.tokenString))
             print("Login Complete...")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("mapView")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         } else {
             print(error.localizedDescription)
         }
