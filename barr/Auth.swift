@@ -16,7 +16,7 @@ struct Auth {
     static func sendAuthRequest(fbAccessToken: String){
         
 //        FBSDKAccessToken.refreshCurrentAccessToken { (connection, result, error : NSError!) -> Void in
-//            print("\(result.tokenString!)")
+            print("\(fbAccessToken)")
             let params = ["access_token": fbAccessToken]
         
             AlamoHelper.GET("login/facebook", parameters: params, completion: {

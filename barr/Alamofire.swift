@@ -38,7 +38,7 @@ struct AlamoHelper {
     }
     
     static func POST(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> Void){
-        Alamofire.request(.POST, self.domain + subdomain, headers: headers, parameters: parameters)
+        Alamofire.request(.POST, self.domain + subdomain, headers: headers, parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -55,7 +55,7 @@ struct AlamoHelper {
     }
     
     static func DELETE(subdomain: String, parameters:[String: AnyObject], completion: (response: JSON) -> AnyObject){
-        Alamofire.request(.DELETE, self.domain + subdomain, headers: headers, parameters: parameters)
+        Alamofire.request(.DELETE, self.domain + subdomain, headers: headers, parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in

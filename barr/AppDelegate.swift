@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import FBSDKLoginKit
 import SwiftyJSON
 
 let screenSize: CGRect = UIScreen.mainScreen().bounds
@@ -19,6 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //App launch code
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        //Optionally add to ensure your credentials are valid:
+        FBSDKLoginManager.renewSystemCredentials {
+            (result:ACAccountCredentialRenewResult, error:NSError!) -> Void in
+                print("\(result.tokenString)")
+        }
+
 //        print("\(User.prefs.stringForKey("fbAuthtoken")!)")
         if let fbAccessToken = User.prefs.stringForKey("fbAuthtoken"){
 //            print(fbAuthtoken)
@@ -39,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        return true
 //        print("Graph Call")
 //        let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,first_name,last_name"], tokenString: fbAuthtoken, version: nil, HTTPMethod: "GET")
 //        req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in

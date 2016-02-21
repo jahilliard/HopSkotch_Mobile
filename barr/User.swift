@@ -56,13 +56,6 @@ class User {
     func makeFbGraphCall(parameters: [String: String], completion: (response: JSON) -> Void){
         let req = FBSDKGraphRequest(graphPath: "me", parameters: parameters, tokenString: self.fbAuthtoken, version: nil, HTTPMethod: "GET")
         req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-            FBSDKAccessToken.setCurrentAccessToken(result.token)
-            print("Before update \(result.tokenString)")
-            FBSDKAccessToken.refreshCurrentAccessToken({
-                (connection, resultAfter, error: NSError!) -> Void in
-                print("After update \(resultAfter.tokenString)")
-                User.prefs.setValue(resultAfter.tokenString, forKey: "fbAuthtoken")
-            })
             if(error == nil) {
                 completion(response: JSON(result))
             } else {
@@ -72,7 +65,7 @@ class User {
     }
     
     func updateUser(parameters: [String: String]){
-        let body: [String:AnyObject] = ["fields":  parameters, "id" : self.userId, "access_token": self.accessToken]
+        let body: [String:AnyObject] = ["fields":  parameters, "fbId" : self.fbId, "access_token": self.accessToken]
         AlamoHelper.POST("api/v1/users/update/" + self.userId, parameters: body, completion: {
             (response) -> Void in
                 print("\(response["message"].rawString())")
@@ -80,3 +73,12 @@ class User {
     }
     
 }
+
+//print("current Token \(FBSDKAccessToken.currentAccessToken())")
+//FBSDKAccessToken.setCurrentAccessToken(result.token)
+//print("Before update \()")
+//FBSDKAccessToken.refreshCurrentAccessToken({
+//    (connection, resultAfter, error: NSError!) -> Void in
+//    print("After update \(resultAfter.tokenString)")
+//    User.prefs.setValue(resultAfter.tokenString, forKey: "fbAuthtoken")
+//})
