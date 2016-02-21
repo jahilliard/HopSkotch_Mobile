@@ -13,12 +13,12 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Load Page")
+//        print("Load Page")
 
         if (FBSDKAccessToken.currentAccessToken() == nil){
             self.performSegueWithIdentifier("LoginSeg", sender: self)
         } else {
-            print("Logged in...")
+//            print("Logged in...")
         }
     }
     

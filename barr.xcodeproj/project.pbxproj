@@ -27,6 +27,8 @@
 		0C3EA74E1C713CDC0039193B /* CurrentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3EA74D1C713CDC0039193B /* CurrentChatViewController.swift */; };
 		0C44DD2C1C6FE70D00B88039 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44DD2B1C6FE70D00B88039 /* AccountViewController.swift */; };
 		0CAE28711C776B4400CE4F92 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE28701C776B4400CE4F92 /* Auth.swift */; };
+		0CAE28731C78C72E00CE4F92 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CAE28721C78C72E00CE4F92 /* Login.storyboard */; };
+		0CAE28751C78C74700CE4F92 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CAE28741C78C74700CE4F92 /* Signup.storyboard */; };
 		0CE32B4D1C759E3000C61F98 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE32B4C1C759E3000C61F98 /* Alamofire.swift */; };
 		F5EA423E335AEFD9191DA847 /* Pods_barr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916C42F7B8F8814DA6A2EB5E /* Pods_barr.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		0C3EA74D1C713CDC0039193B /* CurrentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentChatViewController.swift; sourceTree = "<group>"; };
 		0C44DD2B1C6FE70D00B88039 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0CAE28701C776B4400CE4F92 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		0CAE28721C78C72E00CE4F92 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0CAE28741C78C74700CE4F92 /* Signup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		0CE32B4C1C759E3000C61F98 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		36CDFA35C0D7F6EA94DAAE26 /* Pods-barr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-barr/Pods-barr.debug.xcconfig"; sourceTree = "<group>"; };
 		433DC74FE6359325AE41CE9E /* Pods-barr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barr.release.xcconfig"; path = "Pods/Target Support Files/Pods-barr/Pods-barr.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				0C3DBAF21C6C13AA00401A2E /* Main.storyboard */,
 				0C3EA7491C713A9D0039193B /* Account.storyboard */,
 				0C3EA74B1C713BE60039193B /* Chat.storyboard */,
+				0CAE28721C78C72E00CE4F92 /* Login.storyboard */,
+				0CAE28741C78C74700CE4F92 /* Signup.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -283,8 +289,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CAE28751C78C74700CE4F92 /* Signup.storyboard in Resources */,
 				0C3DBAF91C6C13AA00401A2E /* LaunchScreen.storyboard in Resources */,
 				0C3DBAF61C6C13AA00401A2E /* Assets.xcassets in Resources */,
+				0CAE28731C78C72E00CE4F92 /* Login.storyboard in Resources */,
 				0C3EA74A1C713A9D0039193B /* Account.storyboard in Resources */,
 				0C3EA74C1C713BE60039193B /* Chat.storyboard in Resources */,
 				0C3DBAF41C6C13AA00401A2E /* Main.storyboard in Resources */,

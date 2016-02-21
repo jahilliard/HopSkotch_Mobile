@@ -19,20 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        FBSDKAccessToken.currentAccessToken
-        if let fbAuthtoken = User.prefs.stringForKey("fbAuthtoken"){
-            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["access_token":fbAuthtoken], tokenString: fbAuthtoken, version: nil, HTTPMethod: "GET")
-            req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-                if(error == nil){
-                    print("result \(result)")
-                    let currUser = User(fbAuthtoken: fbAuthtoken, fbId: User.prefs.stringForKey("fbId")!, access_token: User.prefs.stringForKey("barrAuthToken")!, userId: User.prefs.stringForKey("barrId")!)
-                } else {
-                    print("error \(error)")
-                    print("Token not valid")
-                }
-            });
+//        print("\(User.prefs.stringForKey("fbAuthtoken")!)")
+        if let fbAccessToken = User.prefs.stringForKey("fbAuthtoken"){
+//            print(fbAuthtoken)
+            Auth.sendAuthRequest(fbAccessToken)
+//            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["access_token":fbAuthtoken], tokenString: fbAuthtoken, version: nil, HTTPMethod: "GET")
+//            req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+//                if(error == nil){
+//                    print("result \(result)")
+////                    let currUser = User(fbAuthtoken: fbAuthtoken, fbId: User.prefs.stringForKey("fbId")!, access_token: User.prefs.stringForKey("barrAuthToken")!, userId: User.prefs.stringForKey("barrId")!)
+//                } else {
+//                    print("error \(error)")
+//                    print("Token not valid")
+//                }
+//            });
         } else {
-            let storyboard = UIStoryboard(name: "Account", bundle: nil)
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
@@ -87,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {

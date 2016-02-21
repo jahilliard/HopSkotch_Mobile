@@ -17,20 +17,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var location = Location()
     
     var locationManager = CLLocationManager()
-    var businesses: [Business]!
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
-            self.businesses = businesses
-            
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-            }
-        })
         
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             print("request auth")
@@ -49,9 +38,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func locationManager(manager: CLLocationManager,
-        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-            print("\(CLAuthorizationStatus.AuthorizedAlways)")
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
             locationManager.startUpdatingLocation()
     }
     
@@ -63,7 +50,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let userLocation: CLLocation = locations[0] as CLLocation
         locationManager.stopUpdatingLocation()
         if let lat = userLocation.coordinate.latitude as Double?, long = userLocation.coordinate.longitude as Double?{
-            print("Hit anyway")
             let button = UIButton(frame: CGRectMake((screenSize.width * 0.75), (screenSize.height * 0.75), screenSize.width * 0.1, screenSize.height * 0.1))
             button.backgroundColor = UIColor.greenColor()
             self.view = self.gMap.makeMap(lat, longitude: long)

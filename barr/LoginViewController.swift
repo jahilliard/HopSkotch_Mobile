@@ -53,13 +53,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if (error == nil){
+//            print("\(result.token.tokenString)")
+//            print("\(result.token.expirationDate)")
             Auth.sendAuthRequest(result.token.tokenString)
 //            print(User.createUser(result.token.tokenString))
             print("Login Complete...")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("mapView")
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
+            let mapVC = storyboard.instantiateViewControllerWithIdentifier("TabVC")
+            self.presentViewController(mapVC, animated: true, completion: nil)
         } else {
             print(error.localizedDescription)
         }

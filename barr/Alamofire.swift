@@ -16,9 +16,9 @@ let headers = [
 
 struct AlamoHelper {
 
-    static let domain = "http://150.212.62.71:3000/"
-//    static let domain = "http://10.0.0.2:3000/"
-//    static let domain = "http://128.237.181.151:3000/"
+//    static let domain = "http://172.25.0.72:3000/"
+    static let domain = "http://10.0.0.2:3000/"
+//    static let domain = "http://128.237.211.74:3000/"
 
     static func GET(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> AnyObject){
         Alamofire.request(.GET, self.domain + subdomain, headers: headers, parameters: parameters)
@@ -37,7 +37,7 @@ struct AlamoHelper {
         }
     }
     
-    static func POST(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> AnyObject){
+    static func POST(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> Void){
         Alamofire.request(.POST, self.domain + subdomain, headers: headers, parameters: parameters)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
@@ -46,7 +46,7 @@ struct AlamoHelper {
                 case .Success:
                     if let value = response.result.value {
                         let json = JSON(value)
-                        completion(response: json);
+                        completion(response: json)
                     }
                 case .Failure(let error):
                     print(error)
