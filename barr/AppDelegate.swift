@@ -20,29 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        //App launch code
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        //Optionally add to ensure your credentials are valid:
-        FBSDKLoginManager.renewSystemCredentials {
-            (result:ACAccountCredentialRenewResult, error:NSError!) -> Void in
-                print("\(result.tokenString)")
-        }
-
-//        print("\(User.prefs.stringForKey("fbAuthtoken")!)")
+        //App launch code
         if let fbAccessToken = User.prefs.stringForKey("fbAuthtoken"){
-//            print(fbAuthtoken)
+            //print(fbAuthtoken)
             Auth.sendAuthRequest(fbAccessToken)
-//            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["access_token":fbAuthtoken], tokenString: fbAuthtoken, version: nil, HTTPMethod: "GET")
-//            req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-//                if(error == nil){
-//                    print("result \(result)")
-////                    let currUser = User(fbAuthtoken: fbAuthtoken, fbId: User.prefs.stringForKey("fbId")!, access_token: User.prefs.stringForKey("barrAuthToken")!, userId: User.prefs.stringForKey("barrId")!)
-//                } else {
-//                    print("error \(error)")
-//                    print("Token not valid")
-//                }
-//            });
         } else {
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
@@ -50,32 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         return true
-//        print("Graph Call")
-//        let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,first_name,last_name"], tokenString: fbAuthtoken, version: nil, HTTPMethod: "GET")
-//        req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-//            if(error == nil)
-//            {
-//                print("result \(result)")
-//                let resultJSON = JSON(result)
-//                updateUserInfo( resultJSON["first_name"].rawString()!, lastName: resultJSON["last_name"].rawString()!, email: resultJSON["email"].rawString()!)
-//            }
-//            else
-//            {
-//                print("error \(error)")
-//            }
-//        })
-        
-        // Override point for customization after application launch.
-//        if (FBSDKAccessToken.currentAccessToken() == nil){
-//            let storyboard = UIStoryboard(name: "Account", bundle: nil)
-//            
-//            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginScreen")
-//            self.window?.rootViewController = initialViewController
-//            self.window?.makeKeyAndVisible()
-//            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//        } else {
-//            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//        }
 
     }
     

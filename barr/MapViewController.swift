@@ -20,7 +20,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("\(FBSDKAccessToken.currentAccessToken().refreshDate)")
+        print("\(FBSDKAccessToken.currentAccessToken().tokenString)")
+        FBSDKAccessToken.refreshCurrentAccessToken( {
+            (connection, result, error : NSError!) -> Void in
+            print("\(error)")
+            print("\(result.tokenString)")
+            print("\(FBSDKAccessToken.currentAccessToken().refreshDate)")
+        })
+        print("\(FBSDKAccessToken.currentAccessToken().refreshDate)")
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             print("request auth")
             locationManager.requestAlwaysAuthorization()

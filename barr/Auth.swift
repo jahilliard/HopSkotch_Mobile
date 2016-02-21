@@ -7,6 +7,7 @@
 //
 
 import FBSDKCoreKit
+import FBSDKLoginKit
 import SwiftyJSON
 
 struct Auth {
@@ -14,11 +15,7 @@ struct Auth {
     static var currUser: User?
     
     static func sendAuthRequest(fbAccessToken: String){
-        
-//        FBSDKAccessToken.refreshCurrentAccessToken { (connection, result, error : NSError!) -> Void in
-            print("\(fbAccessToken)")
             let params = ["access_token": fbAccessToken]
-        
             AlamoHelper.GET("login/facebook", parameters: params, completion: {
                 userAuth -> AnyObject in
                     currUser = User(fbAuthtoken: fbAccessToken, fbId: userAuth["fbId"].rawValue as! String, accessToken: userAuth["authToken"].rawValue as! String, userId: userAuth["id"].rawValue as! String)

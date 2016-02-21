@@ -18,7 +18,7 @@ struct AlamoHelper {
 
 //    static let domain = "http://172.25.0.72:3000/"
     static let domain = "http://10.0.0.2:3000/"
-//    static let domain = "http://128.237.211.74:3000/"
+//    static let domain = "http://128.237.140.207:3000/"
 
     static func GET(subdomain: String, parameters: [String: AnyObject], completion: (response: JSON) -> AnyObject){
         Alamofire.request(.GET, self.domain + subdomain, headers: headers, parameters: parameters)

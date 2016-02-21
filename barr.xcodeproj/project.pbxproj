@@ -10,6 +10,7 @@
 		0C0074291C725D91008E9652 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0074281C725D91008E9652 /* LoginViewController.swift */; };
 		0C0ECBD71C6C3EAA00252B51 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0ECBD61C6C3EAA00252B51 /* YelpClient.swift */; };
 		0C0ECBD91C6C587700252B51 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0ECBD81C6C587700252B51 /* Location.swift */; };
+		0C1932E31C7A47D4009A6E13 /* notUseFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1932E21C7A47D4009A6E13 /* notUseFiled.swift */; };
 		0C2B2C4A1C6EA3D800D4562B /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2B2C491C6EA3D800D4562B /* GoogleClient.swift */; };
 		0C39264C1C6C149E00CF343B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39264B1C6C149E00CF343B /* User.swift */; };
 		0C39264E1C6C285500CF343B /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39264D1C6C285500CF343B /* Business.swift */; };
@@ -23,7 +24,6 @@
 		0C3DBAF91C6C13AA00401A2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3DBAF71C6C13AA00401A2E /* LaunchScreen.storyboard */; };
 		0C3DBB041C6C13AA00401A2E /* barrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DBB031C6C13AA00401A2E /* barrTests.swift */; };
 		0C3EA74A1C713A9D0039193B /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3EA7491C713A9D0039193B /* Account.storyboard */; };
-		0C3EA74C1C713BE60039193B /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3EA74B1C713BE60039193B /* Chat.storyboard */; };
 		0C3EA74E1C713CDC0039193B /* CurrentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3EA74D1C713CDC0039193B /* CurrentChatViewController.swift */; };
 		0C44DD2C1C6FE70D00B88039 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44DD2B1C6FE70D00B88039 /* AccountViewController.swift */; };
 		0CAE28711C776B4400CE4F92 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE28701C776B4400CE4F92 /* Auth.swift */; };
@@ -47,6 +47,7 @@
 		0C0074281C725D91008E9652 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0C0ECBD61C6C3EAA00252B51 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		0C0ECBD81C6C587700252B51 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0C1932E21C7A47D4009A6E13 /* notUseFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notUseFiled.swift; sourceTree = "<group>"; };
 		0C2B2C491C6EA3D800D4562B /* GoogleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
 		0C39264B1C6C149E00CF343B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0C39264D1C6C285500CF343B /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		0C3DBB031C6C13AA00401A2E /* barrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barrTests.swift; sourceTree = "<group>"; };
 		0C3DBB051C6C13AA00401A2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3EA7491C713A9D0039193B /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		0C3EA74B1C713BE60039193B /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0C3EA74D1C713CDC0039193B /* CurrentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentChatViewController.swift; sourceTree = "<group>"; };
 		0C44DD2B1C6FE70D00B88039 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0CAE28701C776B4400CE4F92 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
@@ -142,11 +142,11 @@
 		0C3DBAED1C6C13AA00401A2E /* barr */ = {
 			isa = PBXGroup;
 			children = (
+				0C3DBAEE1C6C13AA00401A2E /* AppDelegate.swift */,
 				0C3EA7481C713A4D0039193B /* Storyboards */,
 				0C44DD2A1C6FE6D500B88039 /* ViewControllers */,
 				0C0ECBD51C6C3E8800252B51 /* API */,
 				0C39264A1C6C148700CF343B /* models */,
-				0C3DBAEE1C6C13AA00401A2E /* AppDelegate.swift */,
 				0C3DBAF51C6C13AA00401A2E /* Assets.xcassets */,
 				0C3DBAFA1C6C13AA00401A2E /* Info.plist */,
 			);
@@ -168,9 +168,9 @@
 				0C3DBAF71C6C13AA00401A2E /* LaunchScreen.storyboard */,
 				0C3DBAF21C6C13AA00401A2E /* Main.storyboard */,
 				0C3EA7491C713A9D0039193B /* Account.storyboard */,
-				0C3EA74B1C713BE60039193B /* Chat.storyboard */,
 				0CAE28721C78C72E00CE4F92 /* Login.storyboard */,
 				0CAE28741C78C74700CE4F92 /* Signup.storyboard */,
+				0C1932E21C7A47D4009A6E13 /* notUseFiled.swift */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -294,7 +294,6 @@
 				0C3DBAF61C6C13AA00401A2E /* Assets.xcassets in Resources */,
 				0CAE28731C78C72E00CE4F92 /* Login.storyboard in Resources */,
 				0C3EA74A1C713A9D0039193B /* Account.storyboard in Resources */,
-				0C3EA74C1C713BE60039193B /* Chat.storyboard in Resources */,
 				0C3DBAF41C6C13AA00401A2E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +374,7 @@
 				0C3926501C6C28CD00CF343B /* Chat.swift in Sources */,
 				0C39264C1C6C149E00CF343B /* User.swift in Sources */,
 				0C0074291C725D91008E9652 /* LoginViewController.swift in Sources */,
+				0C1932E31C7A47D4009A6E13 /* notUseFiled.swift in Sources */,
 				0C44DD2C1C6FE70D00B88039 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
