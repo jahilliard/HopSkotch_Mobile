@@ -18,18 +18,25 @@ class Business {
     let distance: String?
     let ratingImageURL: NSURL?
     let reviewCount: NSNumber?
+    let lat: NSNumber?
+    let lon: NSNumber?
     
     init(dictionary: NSDictionary) {
-        name = dictionary["name"] as? String
+        self.name = dictionary["name"] as? String?
+        self.lat = dictionary["lat"] as? NSNumber?
+        self.lon = dictionary["lon"] as? NSNumber?
         
+        //setting imageURL
         let imageURLString = dictionary["image_url"] as? String
         if imageURLString != nil {
-            imageURL = NSURL(string: imageURLString!)!
+            self.imageURL = NSURL(string: imageURLString!)!
         } else {
-            imageURL = nil
+            self.imageURL = nil
         }
         
         let location = dictionary["location"] as? NSDictionary
+        
+        //setting address
         var address = ""
         if location != nil {
             let addressArray = location!["address"] as? NSArray
@@ -47,6 +54,7 @@ class Business {
         }
         self.address = address
         
+        //setting categories
         let categoriesArray = dictionary["categories"] as? [[String]]
         if categoriesArray != nil {
             var categoryNames = [String]()
@@ -54,24 +62,26 @@ class Business {
                 let categoryName = category[0]
                 categoryNames.append(categoryName)
             }
-            categories = categoryNames.joinWithSeparator(", ")
+            self.categories = categoryNames.joinWithSeparator(", ")
         } else {
-            categories = nil
+            self.categories = nil
         }
         
+        //setting distance
         let distanceMeters = dictionary["distance"] as? NSNumber
         if distanceMeters != nil {
             let milesPerMeter = 0.000621371
-            distance = String(format: "%.2f mi", milesPerMeter * distanceMeters!.doubleValue)
+            self.distance = String(format: "%.2f mi", milesPerMeter * distanceMeters!.doubleValue)
         } else {
-            distance = nil
+            self.distance = nil
         }
         
+        //setting ratingImageURL
         let ratingImageURLString = dictionary["rating_img_url_large"] as? String
         if ratingImageURLString != nil {
-            ratingImageURL = NSURL(string: ratingImageURLString!)
+            self.ratingImageURL = NSURL(string: ratingImageURLString!)
         } else {
-            ratingImageURL = nil
+            self.ratingImageURL = nil
         }
         
         reviewCount = dictionary["review_count"] as? NSNumber

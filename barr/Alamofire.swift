@@ -31,6 +31,7 @@ struct AlamoHelper {
                         let json = JSON(value)
                         completion(response: json);
                     }
+                    
                 case .Failure(let error):
                     print(error)
                 }
